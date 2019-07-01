@@ -11,7 +11,7 @@ python-osc
 pyfiglet
 PyQt5
 PyQtWebEngine
-pywebview
+pywebview>=2.0
 sip
 py2app
 
