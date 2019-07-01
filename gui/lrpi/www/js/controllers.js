@@ -5,6 +5,8 @@ angular.module('app.controllers', [])
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
 function ($scope, $stateParams) {
 
+    console.log('Can you see me in the debugger?');
+
 
 }])
    
@@ -12,6 +14,14 @@ function ($scope, $stateParams) {
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
 function ($scope, $stateParams) {
+
+    var vm = this;
+    vm.selectAudioFile = selectAudioFile;
+
+    function selectAudioFile() {
+        console.log('click!');
+        window.pywebview.api.event()
+    }
 
 
 }])
