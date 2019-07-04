@@ -7,8 +7,29 @@ import webview, threading
 # See also: https://github.com/r0x0r/pywebview/blob/master/examples/todos/assets/script.js
 
 class Api():
+
+    def sendToIonic(self, message):
+        print(message, 'sent!')
+
+
+    def fileResponse(self, param):
+        webview.evaluate_js("""
+            pywebview.api.sendToIonic('Good!').then(function(response) {
+                alert('Done!')
+            })
+        """)
+
     def event(self, param):
         print('select audio file!')
+        self.fileResponse('Good!')
+       
+
+# def load_html():
+#     webview.evaluate_js("""
+#         pywebview.api.event().then(function(response) {
+#             alert('Yeah?')
+#         })
+#     """)
 
 if __name__ == '__main__':
     # t = threading.Thread(target=load_html)
